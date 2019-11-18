@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+
+    <title>TP2 - Exercicio 1</title>
+</head>
+
+<body>
+    <h1>Exercicio 1:</h1>
+    <h2>
+        Faça um algoritmo que receba o salario de 25 funcionarios, calcule e exiba o salario desse funcionario com a bonificação e o auxilio-escola.    
+    </h2>
+    <div id="select">
+    <p>
+        Digite o salario do funcionario:<br>
+        <input type="text" id="n1">
+    </p>
+    <p id="qtd"> Entradas restantes: 25</p>
+    <p>
+        <button onclick="Processar()">Processar</button>
+    </p>
+    <p id="resposta">
+
+    </p>
+    </div>
+    <a href="index.html">Voltar</a>
+    <script>
+        var nsal = 0
+        var qtd = 25
+        function Processar() {
+            if (qtd > 0) {
+                var n1 = Number(document.getElementById("n1").value)
+
+                document.getElementById("qtd").innerHTML = "Entradas restantes: " + --qtd
+
+                if (qtd == 0) {
+                    if(n1 < 500){
+                        nsal = n1 * 1.05
+                        }
+                       
+                    }
+                    else if(n1 >= 500 &&  n1 < 1200){
+                        nsal = n1 * 1.12
+                        
+                        if(n1 < 600){
+                            nsal += 150
+                        }else{
+                            nsal +=100
+                        }
+                    }
+                    else{
+                        nsal = n1 + 100
+                    }
+                    
+                        document.getElementById("resposta").innerHTML += "Salarios sem bonificação: " + n1 + "<br>"
+                        document.getElementById("resposta").innerHTML += "Salarios com bonificação: " + nsal.toFixed(2) + "<br>"
+                 
+                
+            } else {
+                alert("Todos os numeros ja foram inseridos")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

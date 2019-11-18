@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+
+    <title>TP2 - Exercicio 5</title>
+</head>
+
+<body>
+    <h1>Exercicio 5:</h1>
+    <h2>
+        Criar um algoritmo que exiba o fatorial de um numero.
+    </h2>
+
+    <div id="select">
+    <p>
+        Digite um numero:<br>
+        <input type="text" id="n1">
+    </p>
+    <p>
+        <button onclick="Processar()">Processar</button>
+    </p>
+    <p id="resposta">
+
+    </p>
+    </div>
+    <a href="index.html">Voltar</a>
+    <script>       
+        function Processar() {
+            var n1 = Number(document.getElementById("n1").value)
+            var n2 = Number(n1 - 1)
+            var aux = Number(0)
+            var f = Number(0)
+                for(var i = n1; i > 1; i--){
+                    if(f == 0){
+                    f =  n1 * (i - 1);
+                    }
+                    else{
+                        f = f * (i - 1);
+                      
+                    }
+                }
+                
+                document.getElementById("resposta").innerHTML = "Fatorial: " + f  
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+
+    <title>Exercicio 5 - Lista 3</title>
+</head>
+<h1>Exercicio 5:</h1>
+<h2>Entrar com varios numeros no vetor de 100 elementos, até digitar o numero 0. Imprimir quantos numeros iguais ao ultimo numero foram lidos. O limite de numeros é 100.</h2>
+
+<body onload="Processar5()">
+    <div id="select">
+    <p id="resposta">
+
+    </p>
+    </div>
+    <a href="../index.html">Voltar</a>
+
+    <script>
+        var i = 0, num, v1 = [], cont = 0
+
+        function Processar5() {
+            if (i == 0) {
+                n1 = Number(window.prompt("Entre com um numero: "))
+                if (n1 != 0) {
+                    v1.push(n1)
+                    i++
+                    Processar5()
+                }
+            }
+            else if (n1 != 0 && i < 100) {
+                n1 = Number(window.prompt("Entre com um numero: "))
+                if (n1 != 0) {
+                    v1.push(n1)
+                    i++
+                }
+                Processar5()
+            } else {
+                for (var j = 0; j < i; j++) {
+                    if (v1[j] == v1[i - 1]) {
+                        cont++
+                    }
+                }
+                var res = document.getElementById("resposta").innerHTML = "Numeros digitados: " + v1.toString() + "<br>"
+                res = document.getElementById("resposta").innerHTML += "A quantidades de numeros iguais ao ultimo é: " + cont
+            }
+
+        }
+    </script>
+</body>
+
+</html>

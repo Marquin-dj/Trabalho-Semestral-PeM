@@ -1,0 +1,19 @@
+body{
+    background-color: #5f03fc;
+}
+h1, h2{
+    color: white;
+    text-align: center;
+}
+#select{
+    color: white;  
+    background-color:#762cf5;
+    text-align: center;
+    list-style: inside;
+    padding-right: 0px;
+}
+a{
+    color: white;
+}
+
+

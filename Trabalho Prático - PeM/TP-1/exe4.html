@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+
+    <title>TP-1 - Exercicio 4</title>
+</head>
+<body>
+    <h1>
+        Exercicio 4:
+    </h1>
+    <h2>Maior data cronologicamente.</h2>
+    <div id="select">
+    <p>Digite a primeira data:</p>
+    <p>
+        Dia:<br>
+        <input type="text" id="dia1">
+    </p>
+    <p>
+        Mês:<br>
+        <input type="text" id="mes1">
+    </p>
+    <p>
+        Ano:<br>
+        <input type="text" id="ano1">  
+    </p>
+    <p>
+        
+    <p>Digite a segunda data:</p>
+    <p>
+        Dia:<br>
+        <input type="text" id="dia2">
+    </p>
+    <p>
+        Mês:<br>
+        <input type="text" id="mes2">
+    </p>
+    <p>
+        Ano:<br>
+        <input type="text" id="ano2">  
+    </p>
+        <button onclick="calcular()">Calcular</button>
+    </p>
+    <p id="res">
+
+    </p>
+    </div>
+    <a href="index.html">Voltar</a>
+    <script>
+        function calcular(){
+            var dia1 = Number(document.getElementById("dia1").value)
+            var mes1 = Number(document.getElementById("mes1").value)
+            var ano1 = Number(document.getElementById("ano1").value)
+
+            var dia2 = Number(document.getElementById("dia2").value)
+            var mes2 = Number(document.getElementById("mes2").value)
+            var ano2 = Number(document.getElementById("ano2").value)
+            var res = document.getElementById("res")
+
+            
+           // console.log(a,b,c)
+           if(mes1 > 12 || mes2 > 12){
+               alert('Mês maior que 12')
+           }else{
+            if(ano1 > ano2 || (ano1 == ano2 && mes1 > mes2) || (ano1 == ano2 && mes1 == mes2 && dia1 > dia2)){
+                res.innerHTML =  "Data maior cronologicamente: " + dia2 + "/" + mes2 + "/" + ano2
+            }
+            else if(ano1 == ano2 && mes1 == mes2 && ano1 == ano2){
+                res.innerHTML =  "Datas iguais!"
+            }
+            else{
+                res.innerHTML =  "Data maior cronologicamente: " + dia1 + "/" + mes1 + "/" + ano1
+            }
+        }   
+        }
+    </script>
+</body>
+</html>
