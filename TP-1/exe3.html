@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+
+    <title>TP-1 - Exercicio 3</title>
+</head>
+<body>
+    <div id="select">
+    <h1>
+        Exercicio 3:
+    </h1>
+    <h1>Ordenar de forma crescente.</h2>
+    <p>
+        Digite o 1° valor:<br>
+        <input type="text" id="a">
+    </p>
+    <p>
+        Digite o 2° valor:<br>
+        <input type="text" id="b">
+    </p>
+    <p>
+        Digite o 3° valor:<br>
+        <input type="text" name="" id="c">  
+    </p>
+    <p>
+        <button onclick="calcular()">Calcular</button>
+    </p>
+    <p id="res">
+
+    </p>
+</div>
+    <a href="index.html">Voltar</a>
+    <script>
+        function calcular(){
+            var a = Number(document.getElementById("a").value)
+            var b = Number(document.getElementById("b").value)
+            var c = Number(document.getElementById("c").value)
+            var res = document.getElementById("res")
+
+            
+            console.log(a,b,c)
+            if(a < b && a < c && b < c){
+                res.innerHTML = a + " - " + b + " - " + c
+            }
+            else if(a < b && a < c && c < b){
+                res.innerHTML = a + " - " + c + " - " + b
+            }
+            else if(b < a && b < c && a < c){
+                res.innerHTML = b + " - " + a + " - " + c
+            }
+            else if(b < a && b < c && c < a){
+                res.innerHTML = b + " - " + c + " - " + a
+            }
+            else if(c < a && c < b && a < b){
+                res.innerHTML = c + " - " + a + " - " + b
+            }
+            else{
+                res.innerHTML = c + " - " + b + " - " + a
+            }
+            
+        }
+    </script>
+</body>
+</html>

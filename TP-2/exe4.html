@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+
+    <title>TP2 - Exercicio 4</title>
+</head>
+
+<body onload="Processar()">
+    <h1>Exercicio 4:</h1>
+    <h2>
+        Criar um algoritmo que permita fazer o levantamento de estoques de vinho de uma adega.
+    </h2>
+    <div id="select">
+    <p id="resposta">
+
+    </p>
+    </div>
+    <a href="index.html">Voltar</a>
+    <script>
+        var i = 0, t = 0, b = 0, r = 0 ,cont = 0
+
+            function Processar() {
+                for(i = 0; i < 50;i++){
+                    n1 = Number(window.prompt("Entre com um numero: \n1 - Vinho Tinto \n2 - Vinho Branco \n3 - Vinho Rosê"))
+                    if (n1 == 1) {
+                        t++
+                    }else if (n1 == 2) {
+                        b++
+                        
+                    } else if(n1 == 3){
+                        r++
+
+                    }else{
+                        cont++
+                    }
+                
+                }
+                console.log(t, b, r)
+                var pt = (t * 100)/ 50;
+                var pb = (b * 100)/ 50;
+                var pr = (r * 100)/ 50;
+                    var res = document.getElementById("resposta").innerHTML = "Porcentagem: " + "<br>"+
+                     pt + "% Vinho Tinto "  + "<br>" + 
+                     pb + "% Vinho Branco " + "<br>" + 
+                     pr + "% Vinho Rosê" + "<br>" + 
+                     "Entradas invalidas: " + cont
+                }
+            
+
+            
+    </script>
+</body>
+
+</html>

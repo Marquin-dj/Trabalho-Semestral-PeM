@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <title>Exercicio - 3 - Lista 3</title>
+</head>
+
+<body>
+    <h1>Exercicio 3:</h1>
+        <h2>
+            Faça um algoritmo que crie um vetor de 10 posições e cadastre dados dentro dos mesmos e 
+            gere uma verificação: todos os números pares devem ser acrescidos "+5" no seu valor e 
+            todos os números impares devem ser multiplicados por 5, ao final exibir o vetor alterado.
+        </h2>
+    
+    <div id="select">
+    <p id="qtd"> Quantidade de valores restantes: 10</p>
+     <p>Valores:<br>
+     <input type="number" id="val"><br><br></p>
+
+
+    <button onclick="Processar3()">Processar</button>
+
+    <p id="resposta"></p>
+    </div>
+    <a href="index.html">Voltar</a>
+
+    <script>
+        var qtd = 10
+        var v1 = []
+        function Processar3(){
+            if(qtd > 0){
+                let n1 = Number(document.getElementById("val").value)
+                if(n1 != 0){
+                    let mod = n1 % 2
+                    if(mod == 0){
+                        n1 += 5
+                    }else{
+                        n1 *= 5
+                    }
+                }
+                
+                v1.push(n1)
+                document.getElementById("qtd").innerHTML = "Quantidade de valores restantes: " + --qtd    
+                if(qtd == 0){            
+                    document.getElementById("resposta").innerHTML = "Vetor alterado: " + v1.toString()
+                }
+            }else{
+                alert("Vetor já foi carregado!")
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
